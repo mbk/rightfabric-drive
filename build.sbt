@@ -1,10 +1,12 @@
+import com.typesafe.sbt.SbtNativePackager._
+import NativePackagerKeys._
 // If you have JDK 6 and not JDK 7 then replace all three instances of the number 7 to the number 6
 
 organization := "com.micronautics"
 
-name := "changeMe"
+name := "rightfabric"
 
-version := "0.1.1-SNAPSHOT"
+version := "0.6.14-SNAPSHOT"
 
 scalaVersion := "2.11.2"
 
@@ -27,6 +29,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
 //  "org.scalatest"           %% "scalatest"     % "2.2.0" % "test" withSources(),
 //  "com.github.nscala-time"  %% "nscala-time"   % "1.2.0" withSources()
+  "org.scala-lang.modules" %% "scala-xml" % "1.0.2"
 )
 
 logLevel := Level.Warn
@@ -42,3 +45,5 @@ logLevel in compile := Level.Warn
 cancelable := true
 
 sublimeTransitive := true
+
+packageArchetype.java_application
